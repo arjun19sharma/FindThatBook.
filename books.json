@@ -1,0 +1,16 @@
+[
+    {
+        "title": "The Knowledge Book",
+        "author": "John Doe",
+        "genre": "Knowledge",
+        "description": "An extensive guide to acquiring knowledge in various fields.",
+        "image": "images/book1.jpg"
+    },
+    {
+        "title": "The Power of Learning",
+        "author": "Jane Smith",
+        "genre": "Knowledge",
+        "description": "Exploring the importance and methods of continuous learning.",
+        "image": "images/book2.jpg"
+    }
+]

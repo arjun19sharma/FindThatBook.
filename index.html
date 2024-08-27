@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Book Finder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <h1>FindThatBook.</h1>
+        </div>
+        
+        <div class="header-right">
+            <select id="category-select" onchange="filterByCategory()">
+                <option value="all">All Categories</option>
+                <option value="Knowledge">Knowledge</option>
+                <option value="Self-Improvement">Self-Improvement</option>
+                <option value="Fiction">Fiction</option>
+                <option value="Biography">Biography</option>
+                <option value="Science fiction">Science fiction</option>
+                <option value="Mystery">Mystery</option>
+                <option value="Thriller">Thriller</option>
+                <option value="Novel">Novel</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Drama">Drama</option>
+                <option value="horror">horror</option>
+                <option value="Leadership">Leadership</option>
+                <option value="Business">Business</option>
+                <!-- Add more categories as needed -->
+            </select>
+            <input type="text" id="search-input" placeholder="Search for books by keyword..." oninput="searchBooks()">
+        </div>
+    </header>
+    
+    <button id="aboutUsBtn">About Us</button>
+
+<div id="aboutUsContainer">
+  <div class="about-content">
+    <span id="closeBtn">&times;</span>
+    <h2>About Us</h2>
+    <p>Welcome to FindThatBook,
+         your ultimate destination for discovering the perfect book tailored to your interests and needs. Launched in 2024, our platform was created with a singular mission: to help you effortlessly locate the books that resonate with you. Whether you're searching for a specific title, exploring a new genre, or simply browsing through categories, our intuitive search and filtering options make it easy for you to find exactly what you're looking for. At FindThatBook, we believe in the power of knowledge and the joy of reading. It's important to note that we do not sell books in any form; our purpose is purely to guide you toward the books that captivate your imagination and enrich your life. Explore, discover, and let your next great read find you.
+
+    </p>
+  </div>
+</div>
+
+    <main>
+        <!-- Add this above the "Recommended Books" section -->
+        <div id="instructions">
+            <h2>To find your book: search by its name or click on the category list</h2>
+        </div>
+        <section id="recommended-books">
+            <h2>Recommended Books</h2>
+            <div id="recommended-results" class="results-grid">
+                <!-- Recommended books will be loaded here -->
+            </div>
+        </section>
+        
+        <section id="ad-container">
+            <div class="ad-content">
+                <!-- Insert your ad content here. You could use an ad image or an iframe for ad services. -->
+                <p>Advertise Here!</p>
+            </div>
+        </section>
+         <!-- Favorite Books Section -->
+<div id="favorite-books-section">
+    <h2>Favorite Books</h2>
+    <div id="favorite-books-list"></div>
+    <button id="clear-favorites" class="clear-favorites-btn">Clear Favorites</button>
+  </div>
+
+        <div id="results" class="results-grid">
+            <!-- Featured books will be loaded here -->
+        </div>
+    </main>
+
+    <!-- Modal Structure -->
+    <div id="book-modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2 id="modal-book-title"></h2>
+          <p id="modal-book-author"></p>
+          <div id="modal-book-image"></div>
+          <p id="modal-book-description"></p>
+          <center><button id="add-to-favorites">Add to Favorites</button></center>
+        </div>
+      </div>
+     
+  
+      
+    <script src="scripts.js"></script>
+</body>
+</html>

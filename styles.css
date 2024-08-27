@@ -1,0 +1,355 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F0EFEB;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1B1B1B;
+    color: #EDF4F2;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+/* Ensure the specific text element is targeted */
+header span, header h1, header h2, header p {
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Change color on hover */
+header span:hover, header h1:hover, header h2:hover, header p:hover {
+    color: #ff1a1a;
+}
+
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+#category-select {
+    padding: 10px;
+    margin-right: 15px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+#search-input {
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.results-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.book-card {
+    background-color:#ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 200px;
+    cursor: pointer;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.book-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.book-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.book-info h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #1B1B1B;
+}
+
+.book-info p {
+    font-size: 0.9em;
+    color: #292929;
+}
+
+#recommended-books {
+    margin-top: 40px;
+}
+
+#recommended-books h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #1B1B1B;
+}
+
+/* Ad Container Styles */
+#ad-container {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #eeeeee;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.ad-content {
+    font-size: 1.2em;
+    color: #333;
+}
+
+footer {
+    display: none; /* Ensure footer is hidden or removed */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    .header-right {
+        margin-top: 10px;
+    }
+
+    .results-grid {
+        gap: 10px;
+    }
+
+    .book-card {
+        width: 150px;
+    }
+
+    #ad-container {
+        padding: 15px;
+    }
+}
+
+/* Style for the instructions message */
+#instructions {
+    font-size: 16px; /* Adjust the font size as needed */
+    color: #333; /* Dark grey color for readability */
+    margin-bottom: 20px; /* Space below the message */
+    padding: 10px; /* Padding around the text */
+    text-align: center; /* Center-align the text */
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px; /* Added max-width to control the size */
+    border-radius: 10px; /* Added border radius for better appearance */
+}
+
+.modal-content img {
+    max-width: 30%;
+    height: auto;
+    max-height: 300px; /* Restricts the maximum height */
+    display: block;
+    margin: 0 auto; /* Centers the image */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#add-to-favorites {
+    background-color: #1B1B1B;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+#add-to-favorites:hover {
+    background-color: #ff1a1a;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+/* Add styles for modal overlay */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay effect */
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 1001; /* Higher than the header */
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+/* Favorite Books Section Styles */
+#favorite-books-section {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  #favorite-books-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .clear-favorites-btn {
+    background-color: #1B1B1B;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  .clear-favorites-btn:hover {
+    background-color: #ff1a1a;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
+  
+ /* Button styling */
+#aboutUsBtn {
+    background-color: #1B1B1B; /* Tomato color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px; /* Makes the button pill-shaped */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px; /* Adds gap from all sides */
+
+  }
+  
+  #aboutUsBtn:hover {
+    background-color: #ff4500; /* Darker shade on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
+  
+  /* About Us container styling (unchanged) */
+  #aboutUsContainer {
+    display: none;
+    position: fixed;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    width: 30vw; /* Smaller width */
+    height: 30vw; /* Equal height for a square */
+    transform: translate(-50%, -50%); /* Center the container */
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+  }
+  
+  .about-content {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    border: 1px solid #888;
+    box-sizing: border-box; /* Ensure padding is included within the width/height */
+    position: relative;
+    overflow-y: auto; /* Adds a scrollbar if the content is too tall */
+  }  
+  
+  
+  #closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  #closeBtn:hover,
+  #closeBtn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
