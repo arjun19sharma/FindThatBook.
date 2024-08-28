@@ -87,8 +87,6 @@ const recommendedBooks = [
     // Add more recommended book objects as needed
 ];
 
-
-
 // Function to load all books and recommended books initially
 window.onload = () => {
     displayBooks(books);
@@ -116,10 +114,8 @@ function displayBooks(bookArray) {
         bookCard.appendChild(bookInfo);
         resultsDiv.appendChild(bookCard);
 
-        // Add click event for more interaction
-        bookCard.addEventListener('click', () => {
-            alert(`You selected "${book.title}" by ${book.author}`);
-        });
+        // Add click event for modal interaction
+        bookCard.addEventListener('click', () => openBookModal(book));
     });
 }
 
@@ -144,10 +140,8 @@ function displayRecommendedBooks() {
         bookCard.appendChild(bookInfo);
         recommendedResultsDiv.appendChild(bookCard);
 
-        // Add click event for more interaction
-        bookCard.addEventListener('click', () => {
-            alert(`You selected "${book.title}" by ${book.author}`);
-        });
+        // Add click event for modal interaction
+        bookCard.addEventListener('click', () => openBookModal(book));
     });
 }
 
@@ -180,7 +174,6 @@ function filterByCategory() {
     // Scroll to the books section
     document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
 }
-// Existing code...
 
 // Function to open book details modal
 function openBookModal(book) {
@@ -211,58 +204,6 @@ function addToFavorites(book) {
 
 // Event listener for closing the modal
 document.querySelector('.modal .close').addEventListener('click', closeBookModal);
-
-// Existing function to display books
-function displayBooks(bookArray) {
-    const resultsDiv = document.getElementById('results');
-    resultsDiv.innerHTML = ''; // Clear previous results
-
-    bookArray.forEach(book => {
-        const bookCard = document.createElement('div');
-        bookCard.className = 'book-card';
-
-        const bookImage = document.createElement('img');
-        bookImage.src = book.image;
-        bookImage.alt = book.title;
-
-        const bookInfo = document.createElement('div');
-        bookInfo.className = 'book-info';
-        bookInfo.innerHTML = `<h3>${book.title}</h3><p>${book.description}</p>`;
-
-        bookCard.appendChild(bookImage);
-        bookCard.appendChild(bookInfo);
-        resultsDiv.appendChild(bookCard);
-
-        // Add click event for modal interaction
-        bookCard.addEventListener('click', () => openBookModal(book));
-    });
-}
-
-// Existing function to display recommended books
-function displayRecommendedBooks() {
-    const recommendedResultsDiv = document.getElementById('recommended-results');
-    recommendedResultsDiv.innerHTML = ''; // Clear previous results
-
-    recommendedBooks.forEach(book => {
-        const bookCard = document.createElement('div');
-        bookCard.className = 'book-card';
-
-        const bookImage = document.createElement('img');
-        bookImage.src = book.image;
-        bookImage.alt = book.title;
-
-        const bookInfo = document.createElement('div');
-        bookInfo.className = 'book-info';
-        bookInfo.innerHTML = `<h3>${book.title}</h3><p>${book.description}</p>`;
-
-        bookCard.appendChild(bookImage);
-        bookCard.appendChild(bookInfo);
-        recommendedResultsDiv.appendChild(bookCard);
-
-        // Add click event for modal interaction
-        bookCard.addEventListener('click', () => openBookModal(book));
-    });
-}
 
 // Initialize favorite books from local storage
 let favoriteBooks = JSON.parse(localStorage.getItem("favoriteBooks")) || [];
@@ -297,7 +238,6 @@ function displayFavorites() {
       <img src="${book.image}" alt="${book.title}" class="book-image">
       <h3>${book.title}</h3>
       <p>${book.author}</p>
-      
     `;
     favoritesContainer.appendChild(bookCard);
   });
@@ -323,11 +263,10 @@ document.getElementById("clear-favorites").addEventListener("click", clearFavori
 // Call displayFavorites on page load to display any saved favorite books
 document.addEventListener("DOMContentLoaded", displayFavorites);
 
-
-// Get the elements
+// Get the elements for About Us modal
 const aboutUsBtn = document.getElementById('aboutUsBtn');
 const aboutUsContainer = document.getElementById('aboutUsContainer');
-const closeBtn = document.getElementById('closeBtn');
+const closeAboutUsBtn = document.getElementById('closeAboutUsBtn');
 
 // When the user clicks on the About Us button, show the container
 aboutUsBtn.addEventListener('click', () => {
@@ -335,7 +274,7 @@ aboutUsBtn.addEventListener('click', () => {
 });
 
 // When the user clicks on the close button (x), hide the container
-closeBtn.addEventListener('click', () => {
+closeAboutUsBtn.addEventListener('click', () => {
   aboutUsContainer.style.display = 'none';
 });
 
@@ -343,5 +282,49 @@ closeBtn.addEventListener('click', () => {
 window.addEventListener('click', (event) => {
   if (event.target === aboutUsContainer) {
     aboutUsContainer.style.display = 'none';
+  }
+});
+
+// Get the elements for Contact Me modal
+const contactMeBtn = document.getElementById('contactMeBtn');
+const contactMeContainer = document.getElementById('contactMeContainer');
+const closeContactMeBtn = document.getElementById('closeContactMeBtn');
+
+// When the user clicks on the Contact Me button, show the container
+contactMeBtn.addEventListener('click', () => {
+  contactMeContainer.style.display = 'block';
+});
+
+// When the user clicks on the close button (x), hide the container
+closeContactMeBtn.addEventListener('click', () => {
+  contactMeContainer.style.display = 'none';
+});
+
+// Optional: Close the container if the user clicks anywhere outside of it
+window.addEventListener('click', (event) => {
+  if (event.target === contactMeContainer) {
+    contactMeContainer.style.display = 'none';
+  }
+});
+
+// Get the elements for Privacy Policy modal
+const privacyPolicyBtn = document.getElementById('privacyPolicyBtn');
+const privacyPolicyContainer = document.getElementById('privacyPolicyContainer');
+const closePrivacyPolicyBtn = document.getElementById('closePrivacyPolicyBtn');
+
+// When the user clicks on the Privacy Policy button, show the container
+privacyPolicyBtn.addEventListener('click', () => {
+  privacyPolicyContainer.style.display = 'block';
+});
+
+// When the user clicks on the close button (x), hide the container
+closePrivacyPolicyBtn.addEventListener('click', () => {
+  privacyPolicyContainer.style.display = 'none';
+});
+
+// Optional: Close the container if the user clicks anywhere outside of it
+window.addEventListener('click', (event) => {
+  if (event.target === privacyPolicyContainer) {
+    privacyPolicyContainer.style.display = 'none';
   }
 });
