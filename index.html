@@ -40,19 +40,48 @@
             <input type="text" id="search-input" placeholder="Search for books by keyword..." oninput="searchBooks()">
         </div>
     </header>
-    
-    <button id="aboutUsBtn">About Us</button>
 
-<div id="aboutUsContainer">
-  <div class="about-content">
-    <span id="closeBtn">&times;</span>
-    <h2>About Us</h2>
-    <p>Welcome to FindThatBook,
-         your ultimate destination for discovering the perfect book tailored to your interests and needs. Launched in 2024, our platform was created with a singular mission: to help you effortlessly locate the books that resonate with you. Whether you're searching for a specific title, exploring a new genre, or simply browsing through categories, our intuitive search and filtering options make it easy for you to find exactly what you're looking for. At FindThatBook, we believe in the power of knowledge and the joy of reading. It's important to note that we do not sell books in any form; our purpose is purely to guide you toward the books that captivate your imagination and enrich your life. Explore, discover, and let your next great read find you.
+    <!-- Navigation or Button Section -->
+    <div class="nav-buttons">
+        <!-- Button for the quiz page -->
+        <a href="quiz.html" class="button">Take the Quiz</a>
 
-    </p>
-  </div>
-</div>
+        <!-- Button for the About Us page -->
+        <button id="aboutUsBtn" class="button">About Us</button>
+
+        <!-- New buttons for Contact Me and Privacy Policy -->
+        <button id="contactMeBtn" class="button">Contact Me</button>
+        <button id="privacyPolicyBtn" class="button">Privacy Policy</button>
+    </div>
+
+    <!-- About Us Container -->
+    <div id="aboutUsContainer" class="modal-container">
+        <div class="about-content">
+            <span id="closeAboutUsBtn" class="close-btn">&times;</span>
+            <h2>About Us</h2>
+            <p>Welcome to FindThatBook,
+                your ultimate destination for discovering the perfect book tailored to your interests and needs. Launched in 2024, our platform was created with a singular mission: to help you effortlessly locate the books that resonate with you. Whether you're searching for a specific title, exploring a new genre, or simply browsing through categories, our intuitive search and filtering options make it easy for you to find exactly what you're looking for. At FindThatBook, we believe in the power of knowledge and the joy of reading. It's important to note that we do not sell books in any form; our purpose is purely to guide you toward the books that captivate your imagination and enrich your life. Explore, discover, and let your next great read find you.
+            </p>
+        </div>
+    </div>
+
+    <!-- Contact Me Container -->
+    <div id="contactMeContainer" class="modal-container">
+        <div class="contact-content">
+            <span id="closeContactMeBtn" class="close-btn">&times;</span>
+            <h2>Contact Us</h2>
+            <p>If you have any questions or feedback, feel free to reach out to us at <a href="mailto:contact@findthatbook.com">contact@findthatbook.com</a>.</p>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Container -->
+    <div id="privacyPolicyContainer" class="modal-container">
+        <div class="privacy-content">
+            <span id="closePrivacyPolicyBtn" class="close-btn">&times;</span>
+            <h2>Privacy Policy</h2>
+            <p>Our privacy policy outlines how we handle your personal information and data. We are committed to protecting your privacy and ensuring a safe browsing experience. For detailed information, please read our full privacy policy <a href="privacy-policy.html">here</a>.</p>
+        </div>
+    </div>
 
     <main>
         <!-- Add this above the "Recommended Books" section -->
@@ -66,15 +95,12 @@
             </div>
         </section>
         
-        
-            </div>
-        </section>
-         <!-- Favorite Books Section -->
-<div id="favorite-books-section">
-    <h2>Favorite Books</h2>
-    <div id="favorite-books-list"></div>
-    <button id="clear-favorites" class="clear-favorites-btn">Clear Favorites</button>
-  </div>
+        <!-- Favorite Books Section -->
+        <div id="favorite-books-section">
+            <h2>Favorite Books</h2>
+            <div id="favorite-books-list"></div>
+            <button id="clear-favorites" class="clear-favorites-btn">Clear Favorites</button>
+        </div>
 
         <div id="results" class="results-grid">
             <!-- Featured books will be loaded here -->
@@ -84,17 +110,15 @@
     <!-- Modal Structure -->
     <div id="book-modal" class="modal">
         <div class="modal-content">
-          <span class="close">&times;</span>
-          <h2 id="modal-book-title"></h2>
-          <p id="modal-book-author"></p>
-          <div id="modal-book-image"></div>
-          <p id="modal-book-description"></p>
-          <center><button id="add-to-favorites">Add to Favorites</button></center>
+            <span class="close">&times;</span>
+            <h2 id="modal-book-title"></h2>
+            <p id="modal-book-author"></p>
+            <div id="modal-book-image"></div>
+            <p id="modal-book-description"></p>
+            <center><button id="add-to-favorites">Add to Favorites</button></center>
         </div>
-      </div>
-     
-  
-      
+    </div>
+
     <script src="scripts.js"></script>
 </body>
 </html>
