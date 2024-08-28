@@ -139,28 +139,6 @@ footer {
     display: none; /* Ensure footer is hidden or removed */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-    }
-
-    .header-right {
-        margin-top: 10px;
-    }
-
-    .results-grid {
-        gap: 10px;
-    }
-
-    .book-card {
-        width: 150px;
-    }
-
-    #ad-container {
-        padding: 15px;
-    }
-}
 
 /* Style for the instructions message */
 #instructions {
@@ -268,71 +246,180 @@ footer {
     transform: scale(1.05); /* Slightly enlarge on hover */
   }
   
- /* Button styling */
-#aboutUsBtn {
-    background-color: #1B1B1B; /* Tomato color */
-    color: white;
+ /* Container for buttons */
+.nav-buttons {
+    display: flex;
+    justify-content: space-between; /* Space out buttons */
+    align-items: center; /* Align items vertically in the center */
+    padding: 10px; /* Optional: Adds padding around the container */
+}
+
+/* Button styles */
+.button {
+    display: inline-block;
     padding: 10px 20px;
-    border: none;
-    border-radius: 25px; /* Makes the button pill-shaped */
     font-size: 16px;
-    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px; /* Makes the button pill-shaped */
+    color: white;
+    background-color: #1B1B1B; /* Blue background */
+    border: none;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px; /* Adds gap from all sides */
+    margin: 0 20px; /* Margin to ensure spacing */
+}
 
-  }
-  
-  #aboutUsBtn:hover {
+.button:hover {
     background-color: #ff4500; /* Darker shade on hover */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
     transform: scale(1.05); /* Slightly enlarge on hover */
-  }
-  
-  /* About Us container styling (unchanged) */
-  #aboutUsContainer {
-    display: none;
-    position: fixed;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    width: 30vw; /* Smaller width */
-    height: 30vw; /* Equal height for a square */
-    transform: translate(-50%, -50%); /* Center the container */
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1000;
-  }
-  
-  .about-content {
-    background-color: #fff;
+}
+
+#aboutUsBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    background-color: #1B1B1B;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 20px; /* Margin to ensure spacing */
+}
+
+#aboutUsBtn:hover {
+    background-color: #ff4500;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+/* Container for the About Us content */
+#aboutUsContainer {
+    display: none; /* Hide container by default */
+    position: fixed; /* Position container fixed */
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    padding: 40px;
-    border: 1px solid #888;
-    box-sizing: border-box; /* Ensure padding is included within the width/height */
-    position: relative;
-    overflow-y: auto; /* Adds a scrollbar if the content is too tall */
-  }  
-  
-  
-  #closeBtn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Content within the About Us container */
+.about-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+}
+
+#closeBtn {
+    font-size: 24px;
     cursor: pointer;
-  }
-  
-  #closeBtn:hover,
-  #closeBtn:focus {
+    float: right;
+}
+
+/* Add styles for the Contact Me and Privacy Policy modals */
+#contactMeContainer,
+#privacyPolicyContainer {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    top: 0; 
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    align-items: center; /* Center align items */
+    justify-content: center; /* Center align items */
+    z-index: 1001; /* Ensure modal is on top */
+}
+
+.contact-content,
+.privacy-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    position: relative; /* For close button positioning */
+}
+
+#closeContactMeBtn,
+#closePrivacyPolicyBtn {
+    font-size: 24px;
+    cursor: pointer;
+    float: right;
+}
+
+/* Ensures that buttons and modals are styled consistently */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 25px; /* Makes the button pill-shaped */
+    color: white;
+    background-color: #1B1B1B; /* Button background color */
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 20px; /* Margin to ensure spacing */
+}
+
+.button:hover {
+    background-color: #ff4500; /* Darker shade on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Modal Styles */
+.modal-container {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+/* Content inside the modal */
+.about-content, .contact-content, .privacy-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px; /* Maximum width of the modal */
+    border-radius: 10px; /* Rounded corners */
+    position: relative; /* For close button positioning */
+}
+
+/* Close button */
+.close-btn {
+    color: #aaa;
+    font-size: 24px;
+    cursor: pointer;
+    float: right;
+}
+
+.close-btn:hover,
+.close-btn:focus {
     color: black;
     text-decoration: none;
-    cursor: pointer;
-  }
+}
 
-/* Add styles for modal overlay */
+
+
+ /* Add styles for modal overlay */
 .modal {
     position: fixed;
     top: 0;
@@ -354,6 +441,7 @@ footer {
     max-width: 500px;
     position: relative;
 }
+
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
@@ -376,7 +464,6 @@ footer {
         padding: 15px;
     }
 }
-
 /* Style for the instructions message */
 #instructions {
     font-size: 16px; /* Adjust the font size as needed */
@@ -398,7 +485,6 @@ footer {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-
 .modal-content {
     background-color: #fefefe;
     margin: 10% auto;
@@ -417,4 +503,3 @@ footer {
     margin: 0 auto; /* Centers the image */
     border-radius: 8px; /* Optional: Adds rounded corners */
 }
-  
