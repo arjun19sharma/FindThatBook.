@@ -234,28 +234,7 @@ footer {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
-/* Add styles for modal overlay */
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Overlay effect */
-    display: none; /* Hidden by default */
-    justify-content: center;
-    align-items: center;
-    z-index: 1001; /* Higher than the header */
-}
 
-.modal-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 500px;
-    position: relative;
-}
 /* Favorite Books Section Styles */
 #favorite-books-section {
     margin: 20px;
@@ -352,4 +331,90 @@ footer {
     text-decoration: none;
     cursor: pointer;
   }
+
+/* Add styles for modal overlay */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay effect */
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 1001; /* Higher than the header */
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    .header-right {
+        margin-top: 10px;
+    }
+
+    .results-grid {
+        gap: 10px;
+    }
+
+    .book-card {
+        width: 150px;
+    }
+
+    #ad-container {
+        padding: 15px;
+    }
+}
+
+/* Style for the instructions message */
+#instructions {
+    font-size: 16px; /* Adjust the font size as needed */
+    color: #333; /* Dark grey color for readability */
+    margin-bottom: 20px; /* Space below the message */
+    padding: 10px; /* Padding around the text */
+    text-align: center; /* Center-align the text */
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px; /* Added max-width to control the size */
+    border-radius: 10px; /* Added border radius for better appearance */
+}
+
+.modal-content img {
+    max-width: 30%;
+    height: auto;
+    max-height: 300px; /* Restricts the maximum height */
+    display: block;
+    margin: 0 auto; /* Centers the image */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+}
   
