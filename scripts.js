@@ -43,6 +43,13 @@ const books = [
         description: 'A gripping psychological thriller that delves into the complexities of a marriage gone awry and the dark secrets hidden beneath its surface.',
         image: 'images/gonegirl.jpg'
     },
+    {
+        title: 'The Shining',
+        author: 'Stephen King',
+        genre: 'horror',
+        description: 'A chilling tale of a family trapped in a haunted hotel, where malevolent forces push the father to madness and terrorize his psychic son.',
+        image: 'images/the.Shining.jpg'
+    },
     // Add more book objects here
 ];
 
