@@ -50,6 +50,7 @@ const books = [
         description: 'A chilling tale of a family trapped in a haunted hotel, where malevolent forces push the father to madness and terrorize his psychic son.',
         image: 'images/the.Shining.jpg'
     },
+    
     // Add more book objects here
 ];
 
